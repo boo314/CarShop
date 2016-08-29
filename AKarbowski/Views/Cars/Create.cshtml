@@ -1,0 +1,117 @@
+﻿@using AKarbowski.Infrastructure.ViewModels
+@model CarAddViewModel
+@{
+    var title = "Add new car";
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+@using (Html.BeginForm("Create", "Cars", FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend> Add new car</legend>
+       <div class="">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Title)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Description)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Brand)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Brand)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Model)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Model)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Version)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Version)
+        </div>
+
+        <div class="">
+            @Html.LabelFor(model => model.YearOfProduction)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.YearOfProduction)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Mileage)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Mileage)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.EngineCapacity)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.EngineCapacity)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.EnginePower)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.EnginePower)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.FuelType)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.FuelType)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.AmountOfDoors)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.AmountOfDoors)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.AmountOfSeats)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.AmountOfSeats)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Color)
+        </div>
+        <div class="">
+            @Html.LabelFor(model => model.Type)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Type)
+        </div>
+
+        <div>
+            Thumbnail
+        </div>
+        <div>
+            <input type="file" name="thumb" value="Add thumbnail"/>
+        </div>
+
+        <div>
+            Gallery photos
+        </div>
+        <div>
+            <input type="file" name="files" multiple value="Add photos"/>
+        </div>
+        
+    </fieldset>
+    <input type="submit" value="Add car" />
+
+}

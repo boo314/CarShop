@@ -1,0 +1,40 @@
+﻿@using AKarbowski.Infrastructure.ViewModels
+@model IEnumerable<CarListItemViewModel>
+@{
+    var title = "Cars";
+    ViewBag.Title = title;
+}
+
+<h2>@title</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Car code</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Brand</td>
+            <td>Model</td>
+            <td>Image</td>
+            <td>Options (<a href="@Url.Action("Create","Cars")">Add new <i class="glyphicon glyphicon-plus"></i></a>)</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td data-id="@item.CarId">@item.CarCode</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Brand</td>
+                <td>@item.Model</td>
+                <td><img height="100" src="@item.ThumbnailBase64" title="@item.Brand @item.Model" alt="@item.Brand @item.Model" /></td>
+                <td>
+                    <a href="@Url.Action("Details","Cars", new { id = item.CarId })"><i class="glyphicon glyphicon-list-alt"></i> Details</a>
+                    <a href="@Url.Action("Edit","Cars", new { id = item.CarId })"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                    <a href="@Url.Action("Delete", "Cars", new { id = item.CarId })"><i class="glyphicon glyphicon-remove"></i> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

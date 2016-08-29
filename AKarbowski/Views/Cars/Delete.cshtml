@@ -1,0 +1,15 @@
+﻿
+@{
+    int id = ViewBag.CarId;
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm("Delete", "Cars", new { id = id }))
+{
+    <div>
+        Are you sure?
+        <input type="submit" value="Yes" /> <a href="@Url.Action("Index","Cars")">No</a>
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿@using AKarbowski.Infrastructure.ViewModels
+@model CarDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+
+
+@foreach (var item in Model.Images)
+{
+    <div>
+        <img width="100" id="@item.ImageId" src="@item.ImageBase64" alt="@item.Alt" title="@item.Title" />
+    </div>
+}
